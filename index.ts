@@ -1,4 +1,4 @@
-export default class {
+export default class Rg {
     private number(min: number, max: number): number {
         if (min >= max) {
             console.error(`${min} is grater then ${max} but must be less`);
@@ -20,6 +20,12 @@ export default class {
     }
 
     genDate(min: Date, max: Date): Date {
+
+        if(min instanceof Date && max instanceof Date){
+            console.error(`${min} or ${max} is not a instance of Date. This arguments must be a date object,`);
+            process.exit();
+        }
+
         const minI: number = Date.parse(String(min));
         const maxI: number = Date.parse(String(max));
         if (minI >= maxI) {
@@ -30,15 +36,9 @@ export default class {
     }
 
     genManyDate(min: Date, max: Date, quantity: number = 1) {
-        const minI: number = Date.parse(String(min));
-        const maxI: number = Date.parse(String(max));
-        if (minI >= maxI) {
-            console.error(`${min} is later then ${max} but must be earlier`);
-            process.exit();
-        }
         const count: Date[] = [];
         for (let i = 0; i < quantity; i++) {
-            const d: Date = new Date(this.number(minI, maxI));
+            const d: Date = this.genDate(min, max);
             count.push(d);
         }
         return count;
@@ -55,7 +55,6 @@ export default class {
     genManyFloat(min: number, max: number, decimalPlaces: number = 2, quantity: number=10): number[] {
         const count: number[] = [];
         for (let i = 0; i < quantity; i++) {
-
             count.push(this.genFloat(min, max, decimalPlaces));
         }
         return count;
