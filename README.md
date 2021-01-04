@@ -1,17 +1,14 @@
 # rg - Random Generator
 
-This package export anonymous class just import it in your project. 
+This package export object. Just import it in your project. 
 ```javascript
-const Rg = require('rg");
+const { rg } = require('rndmgenerator");
 ```
 or
 ```javascript
-import Rg from 'rg';
+import { rg } from 'rndmgenerator';
 ```
-Then create rg object:
-```javascript
-const rg = new Rg();
-```
+
 Your new object has several methods:
 
 1. rg.genOne(min, max);

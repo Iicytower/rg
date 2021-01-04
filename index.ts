@@ -1,4 +1,7 @@
-export default class {
+class Rg {
+
+    constructor() { }
+
     private number(min: number, max: number): number {
         if (min >= max) {
             console.error(`${min} is grater then ${max} but must be less`);
@@ -21,7 +24,7 @@ export default class {
 
     genDate(min: Date, max: Date): Date {
 
-        if(min instanceof Date && max instanceof Date){
+        if (min instanceof Date && max instanceof Date) {
             console.error(`${min} or ${max} is not a instance of Date. This arguments must be a date object,`);
             process.exit();
         }
@@ -52,7 +55,7 @@ export default class {
         return Number((Math.random() * (max - min) + min).toFixed(decimalPlaces));
     }
 
-    genManyFloat(min: number, max: number, decimalPlaces: number = 2, quantity: number=10): number[] {
+    genManyFloat(min: number, max: number, decimalPlaces: number = 2, quantity: number = 10): number[] {
         const count: number[] = [];
         for (let i = 0; i < quantity; i++) {
             count.push(this.genFloat(min, max, decimalPlaces));
@@ -60,15 +63,17 @@ export default class {
         return count;
     }
 
-    genBool(){
-        return !!this.number(0,2)
+    genBool() {
+        return !!this.number(0, 2)
     }
 
-    genManyBool(quantity: number = 1){
+    genManyBool(quantity: number = 1) {
         const count: boolean[] = [];
         for (let i = 0; i < quantity; i++) {
-            count.push(!!this.number(0,2));
+            count.push(!!this.number(0, 2));
         }
         return count;
     }
 }
+
+export const rg = new Rg();
