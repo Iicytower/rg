@@ -1,5 +1,5 @@
 {
-  "name": "rg",
+  "name": "rndmgenerator",
   "version": "1.0.0",
   "description": "random number generator",
   "main": "dist/index.js",

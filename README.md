@@ -1,6 +1,6 @@
 # rg - Random Generator
 
-This package export anonymous class just import it in your progect. 
+This package export anonymous class just import it in your project. 
 ```javascript
 const Rg = require('rg");
 ```
