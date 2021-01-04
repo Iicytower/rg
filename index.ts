@@ -1,4 +1,4 @@
-export default class Rg {
+export default class {
     private number(min: number, max: number): number {
         if (min >= max) {
             console.error(`${min} is grater then ${max} but must be less`);
